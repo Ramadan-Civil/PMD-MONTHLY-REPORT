@@ -1,14 +1,15 @@
 /* =========================================================
-   MERAAS PMD MONTHLY EXECUTIVE REPORT
-   Main Application JavaScript
+   MERAAS PMD EXECUTIVE REPORT
+   INTERACTIONS & ANIMATIONS
 ========================================================= */
-
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    setReportDate();
+
     startCounters();
 
-    animateProgressBars();
+    animateBars();
 
     startScrollAnimations();
 
@@ -20,24 +21,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   ANIMATED COUNTERS
+   REPORT DATE
+========================================================= */
+
+function setReportDate() {
+
+    const element =
+        document.getElementById("reportDate");
+
+    if (!element) return;
+
+    const date = new Date();
+
+    const month =
+        date.toLocaleString(
+            "en-US",
+            {
+                month: "long"
+            }
+        );
+
+    const year =
+        date.getFullYear();
+
+    element.textContent =
+        `${month} ${year}`;
+
+}
+
+
+/* =========================================================
+   COUNTERS
 ========================================================= */
 
 function startCounters() {
 
     const counters =
-        document.querySelectorAll("[data-counter]");
-
+        document.querySelectorAll(
+            "[data-counter]"
+        );
 
     counters.forEach(counter => {
 
         const target =
-            Number(counter.dataset.counter);
-
-
-        const duration = 1500;
+            Number(
+                counter.dataset.counter
+            );
 
         let start = 0;
+
+        const duration = 1400;
 
         const startTime =
             performance.now();
@@ -48,7 +81,6 @@ function startCounters() {
             const elapsed =
                 currentTime - startTime;
 
-
             const progress =
                 Math.min(
                     elapsed / duration,
@@ -56,12 +88,9 @@ function startCounters() {
                 );
 
 
-            /*
-                Smooth cubic easing
-            */
-
             const eased =
-                1 - Math.pow(
+                1 -
+                Math.pow(
                     1 - progress,
                     3
                 );
@@ -69,12 +98,14 @@ function startCounters() {
 
             const value =
                 Math.floor(
-                    eased * target
+                    start +
+                    (target - start) *
+                    eased
                 );
 
 
             counter.textContent =
-                value.toLocaleString();
+                value;
 
 
             if (progress < 1) {
@@ -82,6 +113,11 @@ function startCounters() {
                 requestAnimationFrame(
                     update
                 );
+
+            } else {
+
+                counter.textContent =
+                    target;
 
             }
 
@@ -96,24 +132,21 @@ function startCounters() {
 
 
 /* =========================================================
-   PROGRESS BAR ANIMATION
+   BAR ANIMATION
 ========================================================= */
 
-function animateProgressBars() {
+function animateBars() {
 
     const bars =
         document.querySelectorAll(
-            ".progress-fill"
+            ".bar-fill"
         );
 
 
-    bars.forEach((bar, index) => {
+    bars.forEach(bar => {
 
-        const value =
-            Number(
-                bar.dataset.progress || 0
-            );
-
+        const width =
+            bar.dataset.width;
 
         bar.style.width = "0%";
 
@@ -121,9 +154,9 @@ function animateProgressBars() {
         setTimeout(() => {
 
             bar.style.width =
-                `${value}%`;
+                `${width}%`;
 
-        }, 350 + (index * 120));
+        }, 350);
 
     });
 
@@ -138,57 +171,11 @@ function startScrollAnimations() {
 
     const elements =
         document.querySelectorAll(
-            ".section .card"
+            ".kpi-card, .panel, .project-card, .issue-card, .wo-card"
         );
 
 
-    const observer =
-        new IntersectionObserver(
-
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-
-                        entry.target.style.opacity =
-                            "1";
-
-
-                        entry.target.style.transform =
-                            "translateY(0) scale(1)";
-
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold: 0.12
-            }
-
-        );
-
-
-    elements.forEach((element, index) => {
-
-        /*
-            Don't hide cards immediately if
-            they are already visible.
-        */
+    elements.forEach(element => {
 
         element.style.opacity = "0";
 
@@ -197,11 +184,43 @@ function startScrollAnimations() {
 
 
         element.style.transition =
-            `opacity 0.7s ease ${index * 0.03}s,
-             transform 0.7s ease ${index * 0.03}s,
-             box-shadow 0.3s ease,
-             border-color 0.3s ease`;
+            "opacity .7s ease, transform .7s ease";
 
+    });
+
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (!entry.isIntersecting)
+                        return;
+
+
+                    entry.target.style.opacity =
+                        "1";
+
+
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                });
+
+            },
+            {
+                threshold: .12
+            }
+        );
+
+
+    elements.forEach(element => {
 
         observer.observe(element);
 
@@ -211,14 +230,14 @@ function startScrollAnimations() {
 
 
 /* =========================================================
-   SMOOTH NAVIGATION
+   NAVIGATION
 ========================================================= */
 
 function startNavigation() {
 
     const links =
         document.querySelectorAll(
-            ".nav a"
+            ".nav-link"
         );
 
 
@@ -228,72 +247,100 @@ function startNavigation() {
             "click",
             event => {
 
-                const targetId =
+                event.preventDefault();
+
+                const id =
                     link.getAttribute(
                         "href"
                     );
 
-
-                if (
-                    !targetId ||
-                    !targetId.startsWith("#")
-                ) {
-
-                    return;
-
-                }
-
-
-                event.preventDefault();
-
-
-                const target =
+                const section =
                     document.querySelector(
-                        targetId
+                        id
                     );
 
-
-                if (!target) {
-
-                    return;
-
-                }
+                if (!section) return;
 
 
-                const header =
+                const navHeight =
                     document.querySelector(
-                        ".header"
-                    );
+                        ".main-nav"
+                    ).offsetHeight;
 
 
-                const headerHeight =
-                    header
-                        ? header.offsetHeight
-                        : 0;
-
-
-                const targetPosition =
-                    target.getBoundingClientRect()
-                        .top
-                    +
-                    window.scrollY
-                    -
-                    headerHeight
-                    -
-                    20;
+                const position =
+                    section.offsetTop -
+                    navHeight -
+                    15;
 
 
                 window.scrollTo({
 
-                    top:
-                        targetPosition,
+                    top: position,
 
-                    behavior:
-                        "smooth"
+                    behavior: "smooth"
 
                 });
 
             }
+        );
+
+    });
+
+
+    const sections =
+        document.querySelectorAll(
+            "section[id]"
+        );
+
+
+    const sectionObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (!entry.isIntersecting)
+                        return;
+
+
+                    links.forEach(link => {
+
+                        link.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                    const active =
+                        document.querySelector(
+                            `.nav-link[href="#${entry.target.id}"]`
+                        );
+
+
+                    if (active) {
+
+                        active.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                rootMargin:
+                    "-30% 0px -60% 0px"
+            }
+        );
+
+
+    sections.forEach(section => {
+
+        sectionObserver.observe(
+            section
         );
 
     });
@@ -313,25 +360,20 @@ function startProjectInteractions() {
         );
 
 
+    if (
+        window.matchMedia(
+            "(max-width: 700px)"
+        ).matches
+    ) {
+        return;
+    }
+
+
     cards.forEach(card => {
 
         card.addEventListener(
             "mousemove",
             event => {
-
-                /*
-                    Disable 3D movement on
-                    small screens.
-                */
-
-                if (
-                    window.innerWidth <= 750
-                ) {
-
-                    return;
-
-                }
-
 
                 const rect =
                     card.getBoundingClientRect();
@@ -347,25 +389,31 @@ function startProjectInteractions() {
                     rect.top;
 
 
-                const rotateX =
-                    (
-                        (y / rect.height)
-                        - 0.5
-                    ) * -3;
+                const centerX =
+                    rect.width / 2;
+
+
+                const centerY =
+                    rect.height / 2;
 
 
                 const rotateY =
-                    (
-                        (x / rect.width)
-                        - 0.5
-                    ) * 3;
+                    ((x - centerX) /
+                        centerX) *
+                    3;
+
+
+                const rotateX =
+                    ((centerY - y) /
+                        centerY) *
+                    3;
 
 
                 card.style.transform =
                     `perspective(900px)
                      rotateX(${rotateX}deg)
                      rotateY(${rotateY}deg)
-                     translateY(-5px)`;
+                     translateY(-6px)`;
 
             }
         );
@@ -376,7 +424,7 @@ function startProjectInteractions() {
             () => {
 
                 card.style.transform =
-                    "translateY(0)";
+                    "";
 
             }
         );
@@ -387,129 +435,7 @@ function startProjectInteractions() {
 
 
 /* =========================================================
-   REPORT DATE
-========================================================= */
-
-function setReportDate() {
-
-    const dateElement =
-        document.getElementById(
-            "reportDate"
-        );
-
-
-    if (!dateElement) {
-
-        return;
-
-    }
-
-
-    const now =
-        new Date();
-
-
-    dateElement.textContent =
-        now.toLocaleDateString(
-            "en-US",
-            {
-                month: "long",
-                year: "numeric"
-            }
-        );
-
-}
-
-
-/* =========================================================
-   ACTIVE NAVIGATION
-========================================================= */
-
-function startActiveNavigation() {
-
-    const sections =
-        document.querySelectorAll(
-            "section[id]"
-        );
-
-
-    const navLinks =
-        document.querySelectorAll(
-            ".nav a"
-        );
-
-
-    if (!sections.length) {
-
-        return;
-
-    }
-
-
-    const observer =
-        new IntersectionObserver(
-
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (
-                        !entry.isIntersecting
-                    ) {
-
-                        return;
-
-                    }
-
-
-                    const id =
-                        entry.target.id;
-
-
-                    navLinks.forEach(link => {
-
-                        link.classList.remove(
-                            "active"
-                        );
-
-
-                        if (
-                            link.getAttribute(
-                                "href"
-                            ) === `#${id}`
-                        ) {
-
-                            link.classList.add(
-                                "active"
-                            );
-
-                        }
-
-                    });
-
-                });
-
-            },
-
-            {
-                rootMargin:
-                    "-30% 0px -60% 0px"
-            }
-
-        );
-
-
-    sections.forEach(section => {
-
-        observer.observe(section);
-
-    });
-
-}
-
-
-/* =========================================================
-   PAGE LOAD
+   PAGE LOADED
 ========================================================= */
 
 window.addEventListener(
@@ -519,8 +445,6 @@ window.addEventListener(
         document.body.classList.add(
             "loaded"
         );
-
-        startActiveNavigation();
 
     }
 );
