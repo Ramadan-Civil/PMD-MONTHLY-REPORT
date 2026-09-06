@@ -1,50 +1,92 @@
-/* =========================================
-   PMD MONTHLY REPORT
+/* =========================================================
+   MERAAS PMD MONTHLY EXECUTIVE REPORT
    Main Application JavaScript
-========================================= */
+========================================================= */
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
     startCounters();
+
     animateProgressBars();
+
     startScrollAnimations();
+
+    startNavigation();
+
+    startProjectInteractions();
 
 });
 
 
-/* =========================================
+/* =========================================================
    ANIMATED COUNTERS
-========================================= */
+========================================================= */
 
 function startCounters() {
 
-    const counters = document.querySelectorAll("[data-counter]");
+    const counters =
+        document.querySelectorAll("[data-counter]");
+
 
     counters.forEach(counter => {
 
-        const target = Number(counter.dataset.counter);
-        const duration = 1600;
+        const target =
+            Number(counter.dataset.counter);
+
+
+        const duration = 1500;
 
         let start = 0;
-        const startTime = performance.now();
+
+        const startTime =
+            performance.now();
+
 
         function update(currentTime) {
 
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+            const elapsed =
+                currentTime - startTime;
 
-            // Smooth easing
-            const eased = 1 - Math.pow(1 - progress, 3);
 
-            const value = Math.floor(eased * target);
+            const progress =
+                Math.min(
+                    elapsed / duration,
+                    1
+                );
 
-            counter.textContent = value.toLocaleString();
+
+            /*
+                Smooth cubic easing
+            */
+
+            const eased =
+                1 - Math.pow(
+                    1 - progress,
+                    3
+                );
+
+
+            const value =
+                Math.floor(
+                    eased * target
+                );
+
+
+            counter.textContent =
+                value.toLocaleString();
+
 
             if (progress < 1) {
-                requestAnimationFrame(update);
+
+                requestAnimationFrame(
+                    update
+                );
+
             }
 
         }
+
 
         requestAnimationFrame(update);
 
@@ -53,70 +95,113 @@ function startCounters() {
 }
 
 
-/* =========================================
+/* =========================================================
    PROGRESS BAR ANIMATION
-========================================= */
+========================================================= */
 
 function animateProgressBars() {
 
-    const bars = document.querySelectorAll(".progress-fill");
+    const bars =
+        document.querySelectorAll(
+            ".progress-fill"
+        );
+
 
     bars.forEach((bar, index) => {
 
-        const value = bar.dataset.progress || 0;
+        const value =
+            Number(
+                bar.dataset.progress || 0
+            );
+
 
         bar.style.width = "0%";
 
+
         setTimeout(() => {
 
-            bar.style.width = `${value}%`;
+            bar.style.width =
+                `${value}%`;
 
-        }, 300 + (index * 120));
+        }, 350 + (index * 120));
 
     });
 
 }
 
 
-/* =========================================
-   SCROLL REVEAL ANIMATION
-========================================= */
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
 function startScrollAnimations() {
 
-    const elements = document.querySelectorAll(
-        ".fade-in, .float-in, .card, .project-card"
-    );
+    const elements =
+        document.querySelectorAll(
+            ".section .card"
+        );
 
-    const observer = new IntersectionObserver(
 
-        entries => {
+    const observer =
+        new IntersectionObserver(
 
-            entries.forEach(entry => {
+            entries => {
 
-                if (entry.isIntersecting) {
+                entries.forEach(entry => {
 
-                    entry.target.classList.add("visible");
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0) scale(1)";
+                        entry.target.classList.add(
+                            "visible"
+                        );
 
-                }
 
-            });
+                        entry.target.style.opacity =
+                            "1";
 
-        },
 
-        {
-            threshold: 0.12
-        }
+                        entry.target.style.transform =
+                            "translateY(0) scale(1)";
 
-    );
 
-    elements.forEach(element => {
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    elements.forEach((element, index) => {
+
+        /*
+            Don't hide cards immediately if
+            they are already visible.
+        */
 
         element.style.opacity = "0";
-        element.style.transform = "translateY(25px)";
+
+        element.style.transform =
+            "translateY(25px)";
+
+
+        element.style.transition =
+            `opacity 0.7s ease ${index * 0.03}s,
+             transform 0.7s ease ${index * 0.03}s,
+             box-shadow 0.3s ease,
+             border-color 0.3s ease`;
+
 
         observer.observe(element);
 
@@ -125,104 +210,317 @@ function startScrollAnimations() {
 }
 
 
-/* =========================================
+/* =========================================================
    SMOOTH NAVIGATION
-========================================= */
+========================================================= */
 
-document.querySelectorAll(".nav a").forEach(link => {
+function startNavigation() {
 
-    link.addEventListener("click", event => {
+    const links =
+        document.querySelectorAll(
+            ".nav a"
+        );
 
-        const targetId = link.getAttribute("href");
 
-        if (targetId.startsWith("#")) {
+    links.forEach(link => {
 
-            event.preventDefault();
+        link.addEventListener(
+            "click",
+            event => {
 
-            const target = document.querySelector(targetId);
+                const targetId =
+                    link.getAttribute(
+                        "href"
+                    );
 
-            if (target) {
 
-                target.scrollIntoView({
-                    behavior: "smooth"
+                if (
+                    !targetId ||
+                    !targetId.startsWith("#")
+                ) {
+
+                    return;
+
+                }
+
+
+                event.preventDefault();
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (!target) {
+
+                    return;
+
+                }
+
+
+                const header =
+                    document.querySelector(
+                        ".header"
+                    );
+
+
+                const headerHeight =
+                    header
+                        ? header.offsetHeight
+                        : 0;
+
+
+                const targetPosition =
+                    target.getBoundingClientRect()
+                        .top
+                    +
+                    window.scrollY
+                    -
+                    headerHeight
+                    -
+                    20;
+
+
+                window.scrollTo({
+
+                    top:
+                        targetPosition,
+
+                    behavior:
+                        "smooth"
+
                 });
 
             }
-
-        }
-
-    });
-
-});
-
-
-/* =========================================
-   PROJECT CARD HOVER EFFECT
-========================================= */
-
-document.querySelectorAll(".project-card").forEach(card => {
-
-    card.addEventListener("mousemove", event => {
-
-        const rect = card.getBoundingClientRect();
-
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-
-        const rotateX =
-            ((y / rect.height) - 0.5) * -4;
-
-        const rotateY =
-            ((x / rect.width) - 0.5) * 4;
-
-        card.style.transform =
-            `perspective(800px)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             translateY(-5px)`;
+        );
 
     });
 
-    card.addEventListener("mouseleave", () => {
+}
 
-        card.style.transform =
-            "perspective(800px) rotateX(0) rotateY(0) translateY(0)";
+
+/* =========================================================
+   PROJECT CARD INTERACTION
+========================================================= */
+
+function startProjectInteractions() {
+
+    const cards =
+        document.querySelectorAll(
+            ".project-card"
+        );
+
+
+    cards.forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            event => {
+
+                /*
+                    Disable 3D movement on
+                    small screens.
+                */
+
+                if (
+                    window.innerWidth <= 750
+                ) {
+
+                    return;
+
+                }
+
+
+                const rect =
+                    card.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                const rotateX =
+                    (
+                        (y / rect.height)
+                        - 0.5
+                    ) * -3;
+
+
+                const rotateY =
+                    (
+                        (x / rect.width)
+                        - 0.5
+                    ) * 3;
+
+
+                card.style.transform =
+                    `perspective(900px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-5px)`;
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform =
+                    "translateY(0)";
+
+            }
+        );
 
     });
 
-});
+}
 
 
-/* =========================================
-   DATE
-========================================= */
+/* =========================================================
+   REPORT DATE
+========================================================= */
 
 function setReportDate() {
 
     const dateElement =
-        document.getElementById("reportDate");
+        document.getElementById(
+            "reportDate"
+        );
 
-    if (!dateElement) return;
 
-    const now = new Date();
+    if (!dateElement) {
+
+        return;
+
+    }
+
+
+    const now =
+        new Date();
+
 
     dateElement.textContent =
-        now.toLocaleDateString("en-US", {
-            month: "long",
-            year: "numeric"
-        });
+        now.toLocaleDateString(
+            "en-US",
+            {
+                month: "long",
+                year: "numeric"
+            }
+        );
 
 }
 
-setReportDate();
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+function startActiveNavigation() {
+
+    const sections =
+        document.querySelectorAll(
+            "section[id]"
+        );
 
 
-/* =========================================
-   PAGE LOADING
-========================================= */
+    const navLinks =
+        document.querySelectorAll(
+            ".nav a"
+        );
 
-window.addEventListener("load", () => {
 
-    document.body.classList.add("loaded");
+    if (!sections.length) {
 
-});
+        return;
+
+    }
+
+
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        !entry.isIntersecting
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const id =
+                        entry.target.id;
+
+
+                    navLinks.forEach(link => {
+
+                        link.classList.remove(
+                            "active"
+                        );
+
+
+                        if (
+                            link.getAttribute(
+                                "href"
+                            ) === `#${id}`
+                        ) {
+
+                            link.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    });
+
+                });
+
+            },
+
+            {
+                rootMargin:
+                    "-30% 0px -60% 0px"
+            }
+
+        );
+
+
+    sections.forEach(section => {
+
+        observer.observe(section);
+
+    });
+
+}
+
+
+/* =========================================================
+   PAGE LOAD
+========================================================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        document.body.classList.add(
+            "loaded"
+        );
+
+        startActiveNavigation();
+
+    }
+);
