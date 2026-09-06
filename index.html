@@ -2,1323 +2,1436 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="MERAAS Project Management Department Monthly Executive Report"
-    >
+    <meta name="description"
+        content="MERAAS Project Management Department - Monthly Executive Report">
 
     <title>MERAAS | PMD Monthly Executive Report</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
-<div class="container">
-
-
     <!-- =====================================================
-         HEADER
+         HEADER / HERO
     ====================================================== -->
 
-    <header class="header">
+    <header class="hero-header">
 
-        <div class="logo-area">
+        <div class="hero-image"></div>
 
-            <div class="logo">
-                M
-            </div>
+        <div class="hero-overlay"></div>
 
-            <div>
+        <div class="hero-content container">
 
-                <div class="company-name">
-                    MERAAS
+            <div class="hero-top">
+
+                <div class="brand">
+
+                    <div class="brand-logo">
+                        M
+                    </div>
+
+                    <div>
+                        <div class="brand-name">MERAAS</div>
+                        <div class="brand-department">
+                            PROJECT MANAGEMENT DEPARTMENT
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="report-date" id="reportDate">
-                    September 2026
+                <div class="report-info">
+
+                    <div class="report-label">
+                        MONTHLY EXECUTIVE REPORT
+                    </div>
+
+                    <div class="report-date" id="reportDate">
+                        September 2026
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-title">
+
+                <div class="hero-kicker">
+                    PROJECT PERFORMANCE & CONTROL
+                </div>
+
+                <h1>
+                    Monthly
+                    <span>Executive Report</span>
+                </h1>
+
+                <p>
+                    Executive overview of project performance,
+                    progress, work orders, schedule status and
+                    critical management issues.
+                </p>
+
+            </div>
+
+
+            <div class="hero-bottom">
+
+                <div class="hero-stat">
+                    <span class="hero-stat-number">24</span>
+                    <span class="hero-stat-label">TOTAL PROJECTS</span>
+                </div>
+
+                <div class="hero-divider"></div>
+
+                <div class="hero-stat">
+                    <span class="hero-stat-number">73.6%</span>
+                    <span class="hero-stat-label">OVERALL PROGRESS</span>
+                </div>
+
+                <div class="hero-divider"></div>
+
+                <div class="hero-stat">
+                    <span class="hero-stat-number">47</span>
+                    <span class="hero-stat-label">WORK ORDERS</span>
                 </div>
 
             </div>
 
         </div>
-
-
-        <nav class="nav">
-
-            <a href="#executive">
-                Executive
-            </a>
-
-            <a href="#progress">
-                Progress
-            </a>
-
-            <a href="#projects">
-                Projects
-            </a>
-
-            <a href="#workorders">
-                Work Orders
-            </a>
-
-            <a href="#issues">
-                Issues
-            </a>
-
-        </nav>
 
     </header>
 
 
-
     <!-- =====================================================
-         HERO
+         NAVIGATION
     ====================================================== -->
 
-    <section class="hero fade-in">
+    <nav class="main-nav">
 
-        <div class="hero-label">
-            PROJECT MANAGEMENT DEPARTMENT
-        </div>
+        <div class="container nav-inner">
 
-        <h1>
-            Monthly
-            <span>
-                Executive Report
-            </span>
-        </h1>
+            <a href="#executive" class="nav-link active">
+                Overview
+            </a>
 
-        <p>
-            Interactive project performance dashboard covering
-            progress, work orders, critical issues, project
-            performance and monthly execution status.
-        </p>
+            <a href="#performance" class="nav-link">
+                Performance
+            </a>
 
-    </section>
+            <a href="#projects" class="nav-link">
+                Projects
+            </a>
 
+            <a href="#workorders" class="nav-link">
+                Work Orders
+            </a>
 
-
-    <!-- =====================================================
-         EXECUTIVE SUMMARY
-    ====================================================== -->
-
-    <section
-        id="executive"
-        class="section"
-    >
-
-        <div class="section-header">
-
-            <div class="section-title">
-                Executive Summary
-            </div>
-
-            <div class="section-description">
-                Overall portfolio performance and key management indicators.
-            </div>
+            <a href="#issues" class="nav-link">
+                Critical Issues
+            </a>
 
         </div>
 
+    </nav>
 
 
-        <div class="kpi-grid">
+    <main class="container">
 
 
-            <!-- TOTAL PROJECTS -->
+        <!-- =====================================================
+             EXECUTIVE SUMMARY
+        ====================================================== -->
 
-            <div class="card float-in">
+        <section id="executive" class="section">
 
-                <div class="kpi-title">
-                    Total Projects
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-kicker">
+                        EXECUTIVE OVERVIEW
+                    </span>
+
+                    <h2>
+                        Project Performance at a Glance
+                    </h2>
                 </div>
 
-                <div
-                    class="kpi-value"
-                    data-counter="24"
-                >
-                    0
-                </div>
-
-                <div class="kpi-sub">
-                    +12.5% this month
-                </div>
+                <div class="section-line"></div>
 
             </div>
 
 
+            <div class="kpi-grid">
 
-            <!-- COMPLETED -->
+                <div class="kpi-card">
 
-            <div class="card float-in">
+                    <div class="kpi-icon">
+                        P
+                    </div>
 
-                <div class="kpi-title">
-                    Completed
+                    <div class="kpi-content">
+
+                        <span class="kpi-label">
+                            TOTAL PROJECTS
+                        </span>
+
+                        <strong
+                            class="kpi-value"
+                            data-counter="24">
+                            0
+                        </strong>
+
+                        <span class="kpi-change positive">
+                            +12.5% this month
+                        </span>
+
+                    </div>
+
                 </div>
 
-                <div
-                    class="kpi-value"
-                    data-counter="8"
-                >
-                    0
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon success">
+                        ✓
+                    </div>
+
+                    <div class="kpi-content">
+
+                        <span class="kpi-label">
+                            COMPLETED
+                        </span>
+
+                        <strong
+                            class="kpi-value"
+                            data-counter="8">
+                            0
+                        </strong>
+
+                        <span class="kpi-change positive">
+                            ↑ 2 projects
+                        </span>
+
+                    </div>
+
                 </div>
 
-                <div class="kpi-sub">
-                    ↑ 2 projects
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon ongoing">
+                        →
+                    </div>
+
+                    <div class="kpi-content">
+
+                        <span class="kpi-label">
+                            ONGOING
+                        </span>
+
+                        <strong
+                            class="kpi-value"
+                            data-counter="13">
+                            0
+                        </strong>
+
+                        <span class="kpi-change neutral">
+                            Active execution
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon danger">
+                        !
+                    </div>
+
+                    <div class="kpi-content">
+
+                        <span class="kpi-label">
+                            DELAYED
+                        </span>
+
+                        <strong
+                            class="kpi-value"
+                            data-counter="3">
+                            0
+                        </strong>
+
+                        <span class="kpi-change negative">
+                            Requires attention
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon">
+                        WO
+                    </div>
+
+                    <div class="kpi-content">
+
+                        <span class="kpi-label">
+                            WORK ORDERS
+                        </span>
+
+                        <strong
+                            class="kpi-value"
+                            data-counter="47">
+                            0
+                        </strong>
+
+                        <span class="kpi-change neutral">
+                            Total WOs
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card highlight">
+
+                    <div class="kpi-icon">
+                        %
+                    </div>
+
+                    <div class="kpi-content">
+
+                        <span class="kpi-label">
+                            OVERALL PROGRESS
+                        </span>
+
+                        <strong class="kpi-value">
+                            73.6%
+                        </strong>
+
+                        <span class="kpi-change negative">
+                            -4.4% vs planned
+                        </span>
+
+                    </div>
+
                 </div>
 
             </div>
 
+        </section>
 
 
-            <!-- ONGOING -->
+        <!-- =====================================================
+             VISUAL BREAK
+        ====================================================== -->
 
-            <div class="card float-in">
+        <section class="visual-break">
 
-                <div class="kpi-title">
-                    Ongoing
+            <div class="visual-break-image"></div>
+
+            <div class="visual-break-overlay"></div>
+
+            <div class="visual-break-content">
+
+                <span>
+                    PROJECT CONTROL
+                </span>
+
+                <h2>
+                    Turning Project Data into
+                    <strong>Management Decisions</strong>
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PERFORMANCE
+        ====================================================== -->
+
+        <section id="performance" class="section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        PERFORMANCE ANALYTICS
+                    </span>
+
+                    <h2>
+                        Project Performance
+                    </h2>
+
                 </div>
 
-                <div
-                    class="kpi-value"
-                    data-counter="13"
-                >
-                    0
-                </div>
-
-                <div class="kpi-sub">
-                    Active execution
-                </div>
+                <div class="section-line"></div>
 
             </div>
 
 
+            <div class="analytics-grid">
 
-            <!-- DELAYED -->
 
-            <div class="card float-in">
+                <!-- S CURVE -->
 
-                <div class="kpi-title">
-                    Delayed
+                <div class="panel panel-large">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                PROJECT CONTROL
+                            </span>
+
+                            <h3>
+                                S-Curve Performance
+                            </h3>
+
+                        </div>
+
+                        <div class="chart-badge">
+                            -4.4%
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart-area">
+
+                        <svg
+                            viewBox="0 0 900 320"
+                            class="scurve"
+                            preserveAspectRatio="none">
+
+                            <!-- Grid -->
+
+                            <line
+                                x1="50"
+                                y1="50"
+                                x2="850"
+                                y2="50"
+                                class="grid-line"/>
+
+                            <line
+                                x1="50"
+                                y1="110"
+                                x2="850"
+                                y2="110"
+                                class="grid-line"/>
+
+                            <line
+                                x1="50"
+                                y1="170"
+                                x2="850"
+                                y2="170"
+                                class="grid-line"/>
+
+                            <line
+                                x1="50"
+                                y1="230"
+                                x2="850"
+                                y2="230"
+                                class="grid-line"/>
+
+                            <line
+                                x1="50"
+                                y1="280"
+                                x2="850"
+                                y2="280"
+                                class="axis-line"/>
+
+
+                            <!-- Planned -->
+
+                            <polyline
+                                points="
+                                50,280
+                                180,260
+                                310,220
+                                440,170
+                                570,120
+                                700,80
+                                850,50"
+                                class="planned-line"/>
+
+
+                            <!-- Forecast -->
+
+                            <polyline
+                                points="
+                                50,280
+                                180,265
+                                310,235
+                                440,195
+                                570,150
+                                700,105
+                                850,65"
+                                class="forecast-line"/>
+
+
+                            <!-- Actual -->
+
+                            <polyline
+                                points="
+                                50,280
+                                180,268
+                                310,242
+                                440,210
+                                570,180
+                                700,145
+                                850,105"
+                                class="actual-line"/>
+
+
+                            <circle
+                                cx="850"
+                                cy="105"
+                                r="7"
+                                class="actual-point"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="chart-legend">
+
+                        <span>
+                            <i class="legend planned"></i>
+                            Planned
+                        </span>
+
+                        <span>
+                            <i class="legend forecast"></i>
+                            Forecast
+                        </span>
+
+                        <span>
+                            <i class="legend actual"></i>
+                            Actual
+                        </span>
+
+                    </div>
+
                 </div>
 
-                <div
-                    class="kpi-value"
-                    data-counter="3"
-                >
-                    0
+
+                <!-- DONUT -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                PORTFOLIO
+                            </span>
+
+                            <h3>
+                                Project Status
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="donut-container">
+
+                        <div class="donut-chart">
+
+                            <div class="donut-center">
+
+                                <strong>
+                                    24
+                                </strong>
+
+                                <span>
+                                    Projects
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="donut-legend">
+
+                        <div>
+                            <i class="dot completed"></i>
+                            <span>Completed</span>
+                            <strong>8</strong>
+                        </div>
+
+                        <div>
+                            <i class="dot ongoing"></i>
+                            <span>Ongoing</span>
+                            <strong>13</strong>
+                        </div>
+
+                        <div>
+                            <i class="dot delayed"></i>
+                            <span>Delayed</span>
+                            <strong>3</strong>
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="kpi-sub danger-text">
-                    Requires attention
-                </div>
 
             </div>
 
 
+            <!-- DISCIPLINE CHART -->
 
-            <!-- WORK ORDERS -->
+            <div class="panel discipline-panel">
 
-            <div class="card float-in">
+                <div class="panel-header">
 
-                <div class="kpi-title">
-                    Work Orders
-                </div>
+                    <div>
 
-                <div
-                    class="kpi-value"
-                    data-counter="47"
-                >
-                    0
-                </div>
+                        <span class="panel-kicker">
+                            DISCIPLINE ANALYSIS
+                        </span>
 
-                <div class="kpi-sub">
-                    Total WOs
-                </div>
+                        <h3>
+                            Progress by Discipline
+                        </h3>
 
-            </div>
+                    </div>
 
-
-
-            <!-- OVERALL PROGRESS -->
-
-            <div class="card float-in">
-
-                <div class="kpi-title">
-                    Overall Progress
-                </div>
-
-                <div class="kpi-value">
-                    73.6%
-                </div>
-
-                <div class="kpi-sub">
-                    Actual progress
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         OVERALL PROGRESS
-    ====================================================== -->
-
-    <section
-        id="progress"
-        class="section"
-    >
-
-        <div class="section-header">
-
-            <div class="section-title">
-                Overall Progress
-            </div>
-
-            <div class="section-description">
-                Current actual performance compared with planned progress.
-            </div>
-
-        </div>
-
-
-
-        <div class="card">
-
-
-            <!-- ACTUAL -->
-
-            <div class="progress-wrapper">
-
-                <div class="progress-info">
-
-                    <span>
+                    <span class="small-note">
                         Actual Progress
                     </span>
 
-                    <strong>
-                        73.6%
-                    </strong>
-
                 </div>
 
-                <div class="progress-bar">
 
-                    <div
-                        class="progress-fill"
-                        data-progress="73.6"
-                    ></div>
+                <div class="bar-chart">
+
+                    <div class="bar-row">
+
+                        <div class="bar-label">
+                            <span>Civil</span>
+                            <strong>89%</strong>
+                        </div>
+
+                        <div class="bar-track">
+                            <div
+                                class="bar-fill"
+                                data-width="89">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bar-row">
+
+                        <div class="bar-label">
+                            <span>Architectural</span>
+                            <strong>76%</strong>
+                        </div>
+
+                        <div class="bar-track">
+                            <div
+                                class="bar-fill"
+                                data-width="76">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bar-row">
+
+                        <div class="bar-label">
+                            <span>Electrical</span>
+                            <strong>71%</strong>
+                        </div>
+
+                        <div class="bar-track">
+                            <div
+                                class="bar-fill"
+                                data-width="71">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bar-row">
+
+                        <div class="bar-label">
+                            <span>Mechanical</span>
+                            <strong>58%</strong>
+                        </div>
+
+                        <div class="bar-track">
+                            <div
+                                class="bar-fill"
+                                data-width="58">
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
 
+            <!-- WORK ORDER CHART -->
 
-            <!-- PLANNED -->
+            <div class="panel workorder-chart-panel">
 
-            <div class="progress-wrapper">
+                <div class="panel-header">
 
-                <div class="progress-info">
+                    <div>
 
-                    <span>
-                        Planned Progress
+                        <span class="panel-kicker">
+                            WORK ORDER CONTROL
+                        </span>
+
+                        <h3>
+                            Work Order Status
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="wo-chart">
+
+                    <div class="wo-column">
+
+                        <div class="wo-bar">
+
+                            <div
+                                class="wo-segment completed-segment"
+                                style="height:45%">
+                            </div>
+
+                            <div
+                                class="wo-segment ongoing-segment"
+                                style="height:35%">
+                            </div>
+
+                            <div
+                                class="wo-segment pending-segment"
+                                style="height:12%">
+                            </div>
+
+                            <div
+                                class="wo-segment delayed-segment"
+                                style="height:8%">
+                            </div>
+
+                        </div>
+
+                        <span>
+                            Total
+                        </span>
+
+                    </div>
+
+
+                    <div class="wo-summary">
+
+                        <div class="wo-summary-item">
+                            <i class="dot completed"></i>
+                            <span>Completed</span>
+                            <strong>21</strong>
+                        </div>
+
+                        <div class="wo-summary-item">
+                            <i class="dot ongoing"></i>
+                            <span>Ongoing</span>
+                            <strong>17</strong>
+                        </div>
+
+                        <div class="wo-summary-item">
+                            <i class="dot pending"></i>
+                            <span>Pending</span>
+                            <strong>6</strong>
+                        </div>
+
+                        <div class="wo-summary-item">
+                            <i class="dot delayed"></i>
+                            <span>Delayed</span>
+                            <strong>3</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROJECT PORTFOLIO
+        ====================================================== -->
+
+        <section id="projects" class="section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        PROJECT PORTFOLIO
                     </span>
 
-                    <strong>
-                        78%
-                    </strong>
+                    <h2>
+                        Key Projects
+                    </h2>
 
                 </div>
 
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill planned-progress"
-                        data-progress="78"
-                    ></div>
-
-                </div>
+                <div class="section-line"></div>
 
             </div>
 
 
+            <div class="project-grid">
 
-            <!-- VARIANCE -->
 
-            <div class="progress-wrapper">
+                <article class="project-card">
 
-                <div class="progress-info">
+                    <div class="project-image equestrian-image"></div>
 
-                    <span>
-                        Schedule Variance
-                    </span>
+                    <div class="project-content">
 
-                    <strong class="danger-text">
-                        -4.4%
-                    </strong>
+                        <div class="project-top">
 
-                </div>
+                            <span class="status ongoing-status">
+                                ONGOING
+                            </span>
 
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill variance-progress"
-                        data-progress="4.4"
-                    ></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PROJECT PORTFOLIO
-    ====================================================== -->
-
-    <section
-        id="projects"
-        class="section"
-    >
-
-        <div class="section-header">
-
-            <div class="section-title">
-                Project Portfolio
-            </div>
-
-            <div class="section-description">
-                Current status of major projects under PMD monitoring.
-            </div>
-
-        </div>
-
-
-
-        <div class="project-grid">
-
-
-            <!-- EQUESTRIAN -->
-
-            <div class="card project-card">
-
-                <span class="project-status ongoing">
-                    ONGOING
-                </span>
-
-                <div class="project-name">
-                    Equestrian Club
-                </div>
-
-                <div class="project-meta">
-
-                    Actual Progress:
-                    <strong>
-                        82%
-                    </strong>
-
-                    <br>
-
-                    Contractor:
-                    ABC Company
-
-                    <br>
-
-                    Last Update:
-                    04 Sep 2026
-
-                </div>
-
-            </div>
-
-
-
-            <!-- TBZ -->
-
-            <div class="card project-card">
-
-                <span class="project-status ongoing">
-                    ONGOING
-                </span>
-
-                <div class="project-name">
-                    TBZ Project
-                </div>
-
-                <div class="project-meta">
-
-                    Actual Progress:
-                    <strong>
-                        67%
-                    </strong>
-
-                    <br>
-
-                    Zones:
-                    D & E
-
-                    <br>
-
-                    Active monitoring
-
-                </div>
-
-            </div>
-
-
-
-            <!-- INFRASTRUCTURE -->
-
-            <div class="card project-card">
-
-                <span class="project-status completed">
-                    COMPLETED
-                </span>
-
-                <div class="project-name">
-                    Infrastructure Works
-                </div>
-
-                <div class="project-meta">
-
-                    Actual Progress:
-                    <strong>
-                        100%
-                    </strong>
-
-                    <br>
-
-                    Handover:
-                    Completed
-
-                    <br>
-
-                    Project Status:
-                    Closed
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         S-CURVE
-    ====================================================== -->
-
-    <section
-        id="scurve"
-        class="section"
-    >
-
-        <div class="section-header">
-
-            <div class="section-title">
-                Project S-Curve
-            </div>
-
-            <div class="section-description">
-                Planned versus actual cumulative progress.
-            </div>
-
-        </div>
-
-
-
-        <div class="card chart-card">
-
-
-            <div class="chart">
-
-                <svg
-                    width="100%"
-                    height="100%"
-                    viewBox="0 0 900 300"
-                    preserveAspectRatio="none"
-                >
-
-
-                    <!-- GRID -->
-
-                    <line
-                        x1="0"
-                        y1="60"
-                        x2="900"
-                        y2="60"
-                        stroke="#E1E4E9"
-                        stroke-width="1"
-                    />
-
-                    <line
-                        x1="0"
-                        y1="120"
-                        x2="900"
-                        y2="120"
-                        stroke="#E1E4E9"
-                        stroke-width="1"
-                    />
-
-                    <line
-                        x1="0"
-                        y1="180"
-                        x2="900"
-                        y2="180"
-                        stroke="#E1E4E9"
-                        stroke-width="1"
-                    />
-
-                    <line
-                        x1="0"
-                        y1="240"
-                        x2="900"
-                        y2="240"
-                        stroke="#E1E4E9"
-                        stroke-width="1"
-                    />
-
-
-
-                    <!-- PLANNED LINE -->
-
-                    <polyline
-                        points="
-                            0,270
-                            100,260
-                            200,245
-                            300,220
-                            400,185
-                            500,145
-                            600,105
-                            700,75
-                            800,52
-                            900,35
-                        "
-                        fill="none"
-                        stroke="#A8AEB7"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-
-
-
-                    <!-- ACTUAL LINE -->
-
-                    <polyline
-                        points="
-                            0,270
-                            100,264
-                            200,252
-                            300,232
-                            400,205
-                            500,170
-                            600,135
-                            700,110
-                            800,88
-                            900,70
-                        "
-                        fill="none"
-                        stroke="#A01414"
-                        stroke-width="5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-
-
-
-                    <!-- ACTUAL END POINT -->
-
-                    <circle
-                        cx="900"
-                        cy="70"
-                        r="7"
-                        fill="#A01414"
-                    />
-
-                </svg>
-
-            </div>
-
-
-
-            <!-- LEGEND -->
-
-            <div class="chart-legend">
-
-                <div class="legend-item">
-
-                    <span class="legend-line planned-line"></span>
-
-                    Planned
-
-                </div>
-
-                <div class="legend-item">
-
-                    <span class="legend-line actual-line"></span>
-
-                    Actual
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PROGRESS BY DISCIPLINE
-    ====================================================== -->
-
-    <section class="section">
-
-        <div class="section-header">
-
-            <div class="section-title">
-                Progress by Discipline
-            </div>
-
-            <div class="section-description">
-                Current execution performance by engineering discipline.
-            </div>
-
-        </div>
-
-
-
-        <div class="card">
-
-
-            <!-- CIVIL -->
-
-            <div class="progress-wrapper">
-
-                <div class="progress-info">
-
-                    <span>
-                        Civil
-                    </span>
-
-                    <strong>
-                        89%
-                    </strong>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        data-progress="89"
-                    ></div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ARCHITECTURAL -->
-
-            <div class="progress-wrapper">
-
-                <div class="progress-info">
-
-                    <span>
-                        Architectural
-                    </span>
-
-                    <strong>
-                        76%
-                    </strong>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        data-progress="76"
-                    ></div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ELECTRICAL -->
-
-            <div class="progress-wrapper">
-
-                <div class="progress-info">
-
-                    <span>
-                        Electrical
-                    </span>
-
-                    <strong>
-                        71%
-                    </strong>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        data-progress="71"
-                    ></div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- MECHANICAL -->
-
-            <div class="progress-wrapper">
-
-                <div class="progress-info">
-
-                    <span>
-                        Mechanical
-                    </span>
-
-                    <strong>
-                        58%
-                    </strong>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        data-progress="58"
-                    ></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         WORK ORDERS
-    ====================================================== -->
-
-    <section
-        id="workorders"
-        class="section"
-    >
-
-        <div class="section-header">
-
-            <div class="section-title">
-                Work Orders
-            </div>
-
-            <div class="section-description">
-                Current work order status and execution monitoring.
-            </div>
-
-        </div>
-
-
-
-        <div class="kpi-grid">
-
-
-            <div class="card float-in">
-
-                <div class="kpi-title">
-                    Total
-                </div>
-
-                <div
-                    class="kpi-value"
-                    data-counter="47"
-                >
-                    0
-                </div>
-
-                <div class="kpi-sub">
-                    Total Work Orders
-                </div>
-
-            </div>
-
-
-
-            <div class="card float-in">
-
-                <div class="kpi-title">
-                    Completed
-                </div>
-
-                <div
-                    class="kpi-value"
-                    data-counter="21"
-                >
-                    0
-                </div>
-
-                <div class="kpi-sub">
-                    Closed WOs
-                </div>
-
-            </div>
-
-
-
-            <div class="card float-in">
-
-                <div class="kpi-title">
-                    Ongoing
-                </div>
-
-                <div
-                    class="kpi-value"
-                    data-counter="17"
-                >
-                    0
-                </div>
-
-                <div class="kpi-sub">
-                    Active execution
-                </div>
-
-            </div>
-
-
-
-            <div class="card float-in">
-
-                <div class="kpi-title">
-                    Pending
-                </div>
-
-                <div
-                    class="kpi-value"
-                    data-counter="6"
-                >
-                    0
-                </div>
-
-                <div class="kpi-sub danger-text">
-                    Requires action
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CRITICAL ISSUES
-    ====================================================== -->
-
-    <section
-        id="issues"
-        class="section"
-    >
-
-        <div class="section-header">
-
-            <div class="section-title">
-                Critical Issues
-            </div>
-
-            <div class="section-description">
-                Key issues requiring management attention.
-            </div>
-
-        </div>
-
-
-
-        <div class="project-grid">
-
-
-            <!-- ISSUE 1 -->
-
-            <div class="card project-card issue-critical">
-
-                <span class="issue-badge critical">
-                    CRITICAL
-                </span>
-
-                <div class="project-name">
-                    Power Supply
-                </div>
-
-                <div class="project-meta">
-
-                    Project:
-                    Equestrian Club
-
-                    <br>
-
-                    Status:
-                    Pending
-
-                    <br>
-
-                    Duration:
-                    7 Days
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ISSUE 2 -->
-
-            <div class="card project-card issue-warning">
-
-                <span class="issue-badge warning">
-                    DELAYED
-                </span>
-
-                <div class="project-name">
-                    HVAC Equipment
-                </div>
-
-                <div class="project-meta">
-
-                    Schedule Impact:
-                    12 Days
-
-                    <br>
-
-                    Status:
-                    Delayed
-
-                    <br>
-
-                    Required Action:
-                    Immediate Follow-up
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ISSUE 3 -->
-
-            <div class="card project-card issue-material">
-
-                <span class="issue-badge material">
-                    PENDING
-                </span>
-
-                <div class="project-name">
-                    Material Approval
-                </div>
-
-                <div class="project-meta">
-
-                    Awaiting:
-                    Consultant Response
-
-                    <br>
-
-                    Impact:
-                    Procurement
-
-                    <br>
-
-                    Follow-up:
-                    Required
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PROJECT DATA TABLE
-    ====================================================== -->
-
-    <section class="section">
-
-        <div class="section-header">
-
-            <div class="section-title">
-                Project Data
-            </div>
-
-            <div class="section-description">
-                Detailed snapshot of current project execution status.
-            </div>
-
-        </div>
-
-
-
-        <div class="card table-card">
-
-            <div class="table-container">
-
-                <table>
-
-                    <thead>
-
-                        <tr>
-
-                            <th>
-                                Project
-                            </th>
-
-                            <th>
-                                Building
-                            </th>
-
-                            <th>
-                                Discipline
-                            </th>
-
-                            <th>
-                                WO No.
-                            </th>
-
-                            <th>
-                                Contractor
-                            </th>
-
-                            <th>
-                                Progress
-                            </th>
-
-                            <th>
-                                Status
-                            </th>
-
-                        </tr>
-
-                    </thead>
-
-
-                    <tbody>
-
-
-                        <tr>
-
-                            <td>
-                                Equestrian Club
-                            </td>
-
-                            <td>
-                                GYM
-                            </td>
-
-                            <td>
-                                Civil
-                            </td>
-
-                            <td>
-                                WO-001
-                            </td>
-
-                            <td>
-                                Contractor A
-                            </td>
-
-                            <td>
+                            <strong>
                                 82%
-                            </td>
+                            </strong>
 
-                            <td>
-                                <span class="table-status ongoing">
-                                    Ongoing
-                                </span>
-                            </td>
+                        </div>
 
-                        </tr>
+                        <h3>
+                            Equestrian Club Project
+                        </h3>
+
+                        <p>
+                            Major construction and infrastructure
+                            development works.
+                        </p>
+
+                        <div class="project-progress">
+
+                            <div class="project-progress-track">
+
+                                <div
+                                    class="project-progress-fill"
+                                    style="width:82%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-footer">
+
+                            <span>
+                                ABC Company
+                            </span>
+
+                            <span>
+                                04 Sep 2026
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
 
 
+                <article class="project-card">
 
-                        <tr>
+                    <div class="project-image tbz-image"></div>
 
-                            <td>
-                                Equestrian Club
-                            </td>
+                    <div class="project-content">
 
-                            <td>
-                                Admin
-                            </td>
+                        <div class="project-top">
 
-                            <td>
-                                Electrical
-                            </td>
+                            <span class="status ongoing-status">
+                                ONGOING
+                            </span>
 
-                            <td>
-                                WO-002
-                            </td>
-
-                            <td>
-                                Contractor B
-                            </td>
-
-                            <td>
+                            <strong>
                                 67%
-                            </td>
+                            </strong>
 
-                            <td>
-                                <span class="table-status ongoing">
-                                    Ongoing
-                                </span>
-                            </td>
+                        </div>
 
-                        </tr>
+                        <h3>
+                            TBZ Project
+                        </h3>
 
+                        <p>
+                            Zones D & E project execution
+                            and coordination.
+                        </p>
 
+                        <div class="project-progress">
 
-                        <tr>
+                            <div class="project-progress-track">
 
-                            <td>
-                                TBZ Project
-                            </td>
+                                <div
+                                    class="project-progress-fill"
+                                    style="width:67%">
+                                </div>
 
-                            <td>
-                                Zone D
-                            </td>
+                            </div>
 
-                            <td>
-                                Mechanical
-                            </td>
+                        </div>
 
-                            <td>
-                                WO-003
-                            </td>
+                        <div class="project-footer">
 
-                            <td>
-                                Contractor C
-                            </td>
+                            <span>
+                                Zones D & E
+                            </span>
 
-                            <td>
-                                58%
-                            </td>
+                            <span>
+                                03 Sep 2026
+                            </span>
 
-                            <td>
-                                <span class="table-status ongoing">
-                                    Ongoing
-                                </span>
-                            </td>
+                        </div>
 
-                        </tr>
+                    </div>
+
+                </article>
 
 
+                <article class="project-card">
 
-                        <tr>
+                    <div class="project-image infrastructure-image"></div>
 
-                            <td>
-                                Infrastructure Works
-                            </td>
+                    <div class="project-content">
 
-                            <td>
-                                Zone A
-                            </td>
+                        <div class="project-top">
 
-                            <td>
-                                Civil
-                            </td>
+                            <span class="status completed-status">
+                                COMPLETED
+                            </span>
 
-                            <td>
-                                WO-004
-                            </td>
-
-                            <td>
-                                Contractor D
-                            </td>
-
-                            <td>
+                            <strong>
                                 100%
-                            </td>
+                            </strong>
 
-                            <td>
-                                <span class="table-status completed">
-                                    Completed
-                                </span>
-                            </td>
+                        </div>
 
-                        </tr>
+                        <h3>
+                            Infrastructure Works
+                        </h3>
 
-                    </tbody>
+                        <p>
+                            Infrastructure works completed
+                            and handed over.
+                        </p>
 
-                </table>
+                        <div class="project-progress">
+
+                            <div class="project-progress-track">
+
+                                <div
+                                    class="project-progress-fill complete"
+                                    style="width:100%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-footer">
+
+                            <span>
+                                Zone A
+                            </span>
+
+                            <span>
+                                Handover Completed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
+        <!-- =====================================================
+             SECOND VISUAL BREAK
+        ====================================================== -->
+
+        <section class="visual-break second">
+
+            <div class="visual-break-image"></div>
+
+            <div class="visual-break-overlay"></div>
+
+            <div class="visual-break-content">
+
+                <span>
+                    EXECUTION MONITORING
+                </span>
+
+                <h2>
+                    From Work Orders
+                    to <strong>Field Execution</strong>
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             WORK ORDERS
+        ====================================================== -->
+
+        <section id="workorders" class="section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        WORK ORDER MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Work Order Performance
+                    </h2>
+
+                </div>
+
+                <div class="section-line"></div>
+
+            </div>
+
+
+            <div class="wo-cards">
+
+                <div class="wo-card">
+                    <span>Total</span>
+                    <strong>47</strong>
+                </div>
+
+                <div class="wo-card completed-card">
+                    <span>Completed</span>
+                    <strong>21</strong>
+                </div>
+
+                <div class="wo-card ongoing-card">
+                    <span>Ongoing</span>
+                    <strong>17</strong>
+                </div>
+
+                <div class="wo-card pending-card">
+                    <span>Pending</span>
+                    <strong>6</strong>
+                </div>
+
+                <div class="wo-card delayed-card">
+                    <span>Delayed</span>
+                    <strong>3</strong>
+                </div>
+
+            </div>
+
+
+            <!-- DATA TABLE -->
+
+            <div class="panel table-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-kicker">
+                            EXECUTION TRACKING
+                        </span>
+
+                        <h3>
+                            Project Data
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Project</th>
+                                <th>Building</th>
+                                <th>Discipline</th>
+                                <th>WO No.</th>
+                                <th>Contractor</th>
+                                <th>Progress</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    Equestrian Club
+                                </td>
+
+                                <td>
+                                    GYM
+                                </td>
+
+                                <td>
+                                    Civil
+                                </td>
+
+                                <td>
+                                    WO-001
+                                </td>
+
+                                <td>
+                                    Contractor A
+                                </td>
+
+                                <td>
+                                    <div class="table-progress">
+                                        <span style="width:82%"></span>
+                                    </div>
+                                    <small>82%</small>
+                                </td>
+
+                                <td>
+                                    <span class="table-status ongoing">
+                                        Ongoing
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Equestrian Club
+                                </td>
+
+                                <td>
+                                    Admin
+                                </td>
+
+                                <td>
+                                    Electrical
+                                </td>
+
+                                <td>
+                                    WO-002
+                                </td>
+
+                                <td>
+                                    Contractor B
+                                </td>
+
+                                <td>
+                                    <div class="table-progress">
+                                        <span style="width:67%"></span>
+                                    </div>
+                                    <small>67%</small>
+                                </td>
+
+                                <td>
+                                    <span class="table-status ongoing">
+                                        Ongoing
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    TBZ Project
+                                </td>
+
+                                <td>
+                                    Zone D
+                                </td>
+
+                                <td>
+                                    Mechanical
+                                </td>
+
+                                <td>
+                                    WO-003
+                                </td>
+
+                                <td>
+                                    Contractor C
+                                </td>
+
+                                <td>
+                                    <div class="table-progress">
+                                        <span style="width:58%"></span>
+                                    </div>
+                                    <small>58%</small>
+                                </td>
+
+                                <td>
+                                    <span class="table-status ongoing">
+                                        Ongoing
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Infrastructure
+                                </td>
+
+                                <td>
+                                    Zone A
+                                </td>
+
+                                <td>
+                                    Civil
+                                </td>
+
+                                <td>
+                                    WO-004
+                                </td>
+
+                                <td>
+                                    Contractor D
+                                </td>
+
+                                <td>
+                                    <div class="table-progress">
+                                        <span style="width:100%"></span>
+                                    </div>
+                                    <small>100%</small>
+                                </td>
+
+                                <td>
+                                    <span class="table-status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CRITICAL ISSUES
+        ====================================================== -->
+
+        <section id="issues" class="section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        MANAGEMENT ATTENTION
+                    </span>
+
+                    <h2>
+                        Critical Issues
+                    </h2>
+
+                </div>
+
+                <div class="section-line"></div>
+
+            </div>
+
+
+            <div class="issues-grid">
+
+
+                <div class="issue-card danger-issue">
+
+                    <div class="issue-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <span class="issue-type">
+                            CRITICAL
+                        </span>
+
+                        <h3>
+                            Power Supply
+                        </h3>
+
+                        <p>
+                            Equestrian Club
+                        </p>
+
+                        <div class="issue-meta">
+                            Pending 7 Days
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="issue-card warning-issue">
+
+                    <div class="issue-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <span class="issue-type">
+                            SCHEDULE IMPACT
+                        </span>
+
+                        <h3>
+                            HVAC Equipment
+                        </h3>
+
+                        <p>
+                            Delivery and installation delay
+                        </p>
+
+                        <div class="issue-meta">
+                            Impact: 12 Days
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="issue-card purple-issue">
+
+                    <div class="issue-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <span class="issue-type">
+                            PENDING
+                        </span>
+
+                        <h3>
+                            Material Approval
+                        </h3>
+
+                        <p>
+                            Awaiting Consultant Response
+                        </p>
+
+                        <div class="issue-meta">
+                            Requires follow-up
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
 
 
     <!-- =====================================================
          FOOTER
     ====================================================== -->
 
-    <footer class="footer">
+    <footer>
 
-        <div>
-            MERAAS — Project Management Department
-        </div>
+        <div class="container footer-inner">
 
-        <div>
-            Monthly Executive Report — 2026
+            <div>
+
+                <strong>
+                    MERAAS
+                </strong>
+
+                <span>
+                    Project Management Department
+                </span>
+
+            </div>
+
+            <div>
+                Monthly Executive Report — 2026
+            </div>
+
         </div>
 
     </footer>
 
 
-</div>
-
-
-<script src="app.js"></script>
+    <script src="app.js"></script>
 
 </body>
 
