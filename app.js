@@ -3,26 +3,6 @@
    INTERACTIONS / ANIMATIONS / LANGUAGE / PRINT
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    setReportDate();
-
-    startCounters();
-
-    animateBars();
-
-    startScrollAnimations();
-
-    startNavigation();
-
-    startProjectInteractions();
-
-    startLanguageSystem();
-
-    startPrintSystem();
-
-});
-
 
 /* =========================================================
    GLOBAL LANGUAGE STATE
@@ -39,152 +19,73 @@ const translations = {
 
     en: {
 
-        department:
-            "PROJECT MANAGEMENT DEPARTMENT",
+        department: "PROJECT MANAGEMENT DEPARTMENT",
+        monthly_report: "MONTHLY EXECUTIVE REPORT",
+        performance_control: "PROJECT PERFORMANCE & CONTROL",
 
-        monthly_report:
-            "MONTHLY EXECUTIVE REPORT",
-
-        performance_control:
-            "PROJECT PERFORMANCE & CONTROL",
-
-        monthly:
-            "Monthly",
-
-        executive_report:
-            "Executive Report",
+        monthly: "Monthly",
+        executive_report: "Executive Report",
 
         hero_description:
             "Executive overview of project performance, progress, work orders, schedule status and critical management issues.",
 
-        print_report:
-            "Print Report",
+        print_report: "Print Report",
 
-        total_projects:
-            "TOTAL PROJECTS",
+        total_projects: "TOTAL PROJECTS",
+        overall_progress: "OVERALL PROGRESS",
+        work_orders: "WORK ORDERS",
 
-        overall_progress:
-            "OVERALL PROGRESS",
+        overview: "Overview",
+        performance: "Performance",
+        projects: "Projects",
+        critical_issues: "Critical Issues",
 
-        work_orders:
-            "WORK ORDERS",
+        executive_overview: "EXECUTIVE OVERVIEW",
+        performance_glance: "Project Performance at a Glance",
 
-        overview:
-            "Overview",
+        completed: "Completed",
+        ongoing: "Ongoing",
+        delayed: "Delayed",
+        pending: "Pending",
 
-        performance:
-            "Performance",
+        increase_month: "+12.5% this month",
+        two_projects: "↑ 2 projects",
+        active_execution: "Active execution",
+        requires_attention: "Requires attention",
 
-        projects:
-            "Projects",
+        total_wos: "Total WOs",
+        vs_planned: "-4.4% vs planned",
 
-        critical_issues:
-            "Critical Issues",
+        project_control: "PROJECT CONTROL",
+        turning_data: "Turning Project Data into",
+        management_decisions: "Management Decisions",
 
-        executive_overview:
-            "EXECUTIVE OVERVIEW",
+        performance_analytics: "PERFORMANCE ANALYTICS",
+        project_performance: "Project Performance",
 
-        performance_glance:
-            "Project Performance at a Glance",
+        scurve: "S-Curve Performance",
+        planned: "Planned",
+        forecast: "Forecast",
+        actual: "Actual",
 
-        completed:
-            "Completed",
+        portfolio: "PORTFOLIO",
+        project_status: "Project Status",
 
-        ongoing:
-            "Ongoing",
+        discipline_analysis: "DISCIPLINE ANALYSIS",
+        progress_discipline: "Progress by Discipline",
+        actual_progress: "Actual Progress",
 
-        delayed:
-            "Delayed",
+        civil: "Civil",
+        architectural: "Architectural",
+        electrical: "Electrical",
+        mechanical: "Mechanical",
 
-        pending:
-            "Pending",
+        work_order_control: "WORK ORDER CONTROL",
+        work_order_status: "Work Order Status",
+        total: "Total",
 
-        increase_month:
-            "+12.5% this month",
-
-        two_projects:
-            "↑ 2 projects",
-
-        active_execution:
-            "Active execution",
-
-        requires_attention:
-            "Requires attention",
-
-        total_wos:
-            "Total WOs",
-
-        vs_planned:
-            "-4.4% vs planned",
-
-        project_control:
-            "PROJECT CONTROL",
-
-        turning_data:
-            "Turning Project Data into",
-
-        management_decisions:
-            "Management Decisions",
-
-        performance_analytics:
-            "PERFORMANCE ANALYTICS",
-
-        project_performance:
-            "Project Performance",
-
-        scurve:
-            "S-Curve Performance",
-
-        planned:
-            "Planned",
-
-        forecast:
-            "Forecast",
-
-        actual:
-            "Actual",
-
-        portfolio:
-            "PORTFOLIO",
-
-        project_status:
-            "Project Status",
-
-        discipline_analysis:
-            "DISCIPLINE ANALYSIS",
-
-        progress_discipline:
-            "Progress by Discipline",
-
-        actual_progress:
-            "Actual Progress",
-
-        civil:
-            "Civil",
-
-        architectural:
-            "Architectural",
-
-        electrical:
-            "Electrical",
-
-        mechanical:
-            "Mechanical",
-
-        work_order_control:
-            "WORK ORDER CONTROL",
-
-        work_order_status:
-            "Work Order Status",
-
-        total:
-            "Total",
-
-        project_portfolio:
-            "PROJECT PORTFOLIO",
-
-        key_projects:
-            "Key Projects",
+        project_portfolio: "PROJECT PORTFOLIO",
+        key_projects: "Key Projects",
 
         equestrian_description:
             "Major construction and infrastructure development works.",
@@ -195,71 +96,39 @@ const translations = {
         infrastructure_description:
             "Infrastructure works completed and handed over.",
 
-        handover_completed:
-            "Handover Completed",
+        handover_completed: "Handover Completed",
+        execution_monitoring: "EXECUTION MONITORING",
 
-        execution_monitoring:
-            "EXECUTION MONITORING",
+        from_work_orders: "From Work Orders",
+        field_execution: "to Field Execution",
 
-        from_work_orders:
-            "From Work Orders",
+        work_order_management: "WORK ORDER MANAGEMENT",
+        work_order_performance: "Work Order Performance",
 
-        field_execution:
-            "to Field Execution",
+        execution_tracking: "EXECUTION TRACKING",
+        project_data: "Project Data",
 
-        work_order_management:
-            "WORK ORDER MANAGEMENT",
+        project: "Project",
+        building: "Building",
+        discipline: "Discipline",
+        wo_no: "WO No.",
+        contractor: "Contractor",
+        progress: "Progress",
+        status: "Status",
 
-        work_order_performance:
-            "Work Order Performance",
+        management_attention: "MANAGEMENT ATTENTION",
 
-        execution_tracking:
-            "EXECUTION TRACKING",
+        critical: "CRITICAL",
+        pending_seven_days: "Pending 7 Days",
 
-        project_data:
-            "Project Data",
-
-        project:
-            "Project",
-
-        building:
-            "Building",
-
-        discipline:
-            "Discipline",
-
-        wo_no:
-            "WO No.",
-
-        contractor:
-            "Contractor",
-
-        progress:
-            "Progress",
-
-        status:
-            "Status",
-
-        management_attention:
-            "MANAGEMENT ATTENTION",
-
-        critical:
-            "CRITICAL",
-
-        pending_seven_days:
-            "Pending 7 Days",
-
-        schedule_impact:
-            "SCHEDULE IMPACT",
-
+        schedule_impact: "SCHEDULE IMPACT",
         delivery_installation_delay:
             "Delivery and installation delay",
 
         impact_twelve_days:
             "Impact: 12 Days",
 
-        material_approval:
-            "Material Approval",
+        material_approval: "Material Approval",
 
         awaiting_consultant:
             "Awaiting Consultant Response",
@@ -275,8 +144,7 @@ const translations = {
 
     ar: {
 
-        department:
-            "إدارة إدارة المشاريع",
+        department: "إدارة المشروعات",
 
         monthly_report:
             "التقرير التنفيذي الشهري",
@@ -512,6 +380,85 @@ const translations = {
 
 
 /* =========================================================
+   INITIALIZATION
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /*
+       Important:
+       Initialize language and print controls FIRST.
+       If another animation fails, these buttons still work.
+    */
+
+    try {
+        startLanguageSystem();
+    } catch (error) {
+        console.error("Language system error:", error);
+    }
+
+
+    try {
+        startPrintSystem();
+    } catch (error) {
+        console.error("Print system error:", error);
+    }
+
+
+    try {
+        setReportDate();
+    } catch (error) {
+        console.error("Report date error:", error);
+    }
+
+
+    try {
+        startCounters();
+    } catch (error) {
+        console.error("Counter animation error:", error);
+    }
+
+
+    try {
+        animateBars();
+    } catch (error) {
+        console.error("Bar animation error:", error);
+    }
+
+
+    try {
+        startScrollAnimations();
+    } catch (error) {
+        console.error("Scroll animation error:", error);
+    }
+
+
+    try {
+        startNavigation();
+    } catch (error) {
+        console.error("Navigation error:", error);
+    }
+
+
+    try {
+        startProjectInteractions();
+    } catch (error) {
+        console.error("Project interaction error:", error);
+    }
+
+
+    /*
+       Force visible state.
+       This prevents one JS problem from leaving the
+       whole page transparent.
+    */
+
+    document.body.classList.add("loaded");
+
+});
+
+
+/* =========================================================
    REPORT DATE
 ========================================================= */
 
@@ -522,21 +469,28 @@ function setReportDate() {
 
     if (!element) return;
 
-    const date =
-        new Date();
+
+    const date = new Date();
+
+
+    const locale =
+        currentLanguage === "ar"
+            ? "ar-EG"
+            : "en-US";
+
 
     const month =
         date.toLocaleString(
-            currentLanguage === "ar"
-                ? "ar"
-                : "en-US",
+            locale,
             {
                 month: "long"
             }
         );
 
+
     const year =
         date.getFullYear();
+
 
     element.textContent =
         `${month} ${year}`;
@@ -551,16 +505,37 @@ function setReportDate() {
 function startLanguageSystem() {
 
     const button =
-        document.getElementById(
-            "languageToggle"
+        document.getElementById("languageToggle");
+
+
+    if (!button) {
+
+        console.warn(
+            "Language button #languageToggle not found."
         );
 
-    if (!button) return;
+        return;
+
+    }
+
+
+    /*
+       Prevent duplicate event listeners
+    */
+
+    if (
+        button.dataset.languageInitialized === "true"
+    ) {
+        return;
+    }
+
+
+    button.dataset.languageInitialized = "true";
 
 
     button.addEventListener(
         "click",
-        () => {
+        function () {
 
             currentLanguage =
                 currentLanguage === "en"
@@ -573,14 +548,32 @@ function startLanguageSystem() {
         }
     );
 
+
+    /*
+       Apply initial language
+    */
+
+    applyLanguage();
+
 }
 
+
+/* =========================================================
+   APPLY LANGUAGE
+========================================================= */
 
 function applyLanguage() {
 
     const dictionary =
         translations[currentLanguage];
 
+
+    if (!dictionary) return;
+
+
+    /*
+       HTML language + direction
+    */
 
     document.documentElement.lang =
         currentLanguage;
@@ -592,28 +585,39 @@ function applyLanguage() {
             : "ltr";
 
 
+    /*
+       Translate all data-i18n elements
+    */
+
     const elements =
         document.querySelectorAll(
             "[data-i18n]"
         );
 
 
-    elements.forEach(element => {
+    elements.forEach(
+        function (element) {
 
-        const key =
-            element.dataset.i18n;
+            const key =
+                element.dataset.i18n;
 
-        if (
-            dictionary[key] !== undefined
-        ) {
 
-            element.textContent =
-                dictionary[key];
+            if (
+                dictionary[key] !== undefined
+            ) {
+
+                element.textContent =
+                    dictionary[key];
+
+            }
 
         }
+    );
 
-    });
 
+    /*
+       Update language button
+    */
 
     const languageText =
         document.getElementById(
@@ -631,6 +635,10 @@ function applyLanguage() {
     }
 
 
+    /*
+       Update date
+    */
+
     setReportDate();
 
 }
@@ -643,16 +651,37 @@ function applyLanguage() {
 function startPrintSystem() {
 
     const button =
-        document.getElementById(
-            "printReport"
+        document.getElementById("printReport");
+
+
+    if (!button) {
+
+        console.warn(
+            "Print button #printReport not found."
         );
 
-    if (!button) return;
+        return;
+
+    }
+
+
+    /*
+       Prevent duplicate event listeners
+    */
+
+    if (
+        button.dataset.printInitialized === "true"
+    ) {
+        return;
+    }
+
+
+    button.dataset.printInitialized = "true";
 
 
     button.addEventListener(
         "click",
-        () => {
+        function () {
 
             window.print();
 
@@ -675,12 +704,13 @@ function startCounters() {
 
 
     counters.forEach(
-        counter => {
+        function (counter) {
 
             const target =
                 Number(
                     counter.dataset.counter
                 );
+
 
             if (
                 Number.isNaN(target)
@@ -739,9 +769,7 @@ function startCounters() {
                         update
                     );
 
-                }
-
-                else {
+                } else {
 
                     counter.textContent =
                         target;
@@ -774,21 +802,32 @@ function animateBars() {
 
 
     bars.forEach(
-        bar => {
+        function (bar) {
 
             const width =
-                bar.dataset.width;
+                Number(
+                    bar.dataset.width
+                );
 
 
-            bar.style.width =
-                "0%";
+            if (
+                Number.isNaN(width)
+            ) {
+                return;
+            }
+
+
+            bar.style.width = "0%";
 
 
             setTimeout(
-                () => {
+                function () {
 
                     bar.style.width =
-                        `${width}%`;
+                        `${Math.min(
+                            Math.max(width, 0),
+                            100
+                        )}%`;
 
                 },
                 400
@@ -812,15 +851,26 @@ function startScrollAnimations() {
         );
 
 
+    if (!elements.length) {
+        return;
+    }
+
+
+    /*
+       If browser does not support IntersectionObserver,
+       show everything immediately.
+    */
+
     if (
         !("IntersectionObserver" in window)
     ) {
 
         elements.forEach(
-            element => {
+            function (element) {
 
-                element.style.opacity =
-                    "1";
+                element.classList.add(
+                    "reveal-visible"
+                );
 
             }
         );
@@ -831,7 +881,7 @@ function startScrollAnimations() {
 
 
     elements.forEach(
-        element => {
+        function (element) {
 
             element.classList.add(
                 "reveal-ready"
@@ -843,10 +893,10 @@ function startScrollAnimations() {
 
     const observer =
         new IntersectionObserver(
-            entries => {
+            function (entries) {
 
                 entries.forEach(
-                    entry => {
+                    function (entry) {
 
                         if (
                             !entry.isIntersecting
@@ -869,13 +919,13 @@ function startScrollAnimations() {
 
             },
             {
-                threshold: .12
+                threshold: 0.12
             }
         );
 
 
     elements.forEach(
-        element => {
+        function (element) {
 
             observer.observe(
                 element
@@ -899,12 +949,17 @@ function startNavigation() {
         );
 
 
+    if (!links.length) {
+        return;
+    }
+
+
     links.forEach(
-        link => {
+        function (link) {
 
             link.addEventListener(
                 "click",
-                event => {
+                function (event) {
 
                     event.preventDefault();
 
@@ -913,6 +968,14 @@ function startNavigation() {
                         link.getAttribute(
                             "href"
                         );
+
+
+                    if (
+                        !id ||
+                        id.charAt(0) !== "#"
+                    ) {
+                        return;
+                    }
 
 
                     const section =
@@ -946,11 +1009,9 @@ function startNavigation() {
 
                     window.scrollTo({
 
-                        top:
-                            position,
+                        top: position,
 
-                        behavior:
-                            "smooth"
+                        behavior: "smooth"
 
                     });
 
@@ -961,18 +1022,30 @@ function startNavigation() {
     );
 
 
+    /*
+       Active navigation item
+    */
+
     const sections =
         document.querySelectorAll(
             "section[id]"
         );
 
 
+    if (
+        !sections.length ||
+        !("IntersectionObserver" in window)
+    ) {
+        return;
+    }
+
+
     const sectionObserver =
         new IntersectionObserver(
-            entries => {
+            function (entries) {
 
                 entries.forEach(
-                    entry => {
+                    function (entry) {
 
                         if (
                             !entry.isIntersecting
@@ -982,7 +1055,7 @@ function startNavigation() {
 
 
                         links.forEach(
-                            link => {
+                            function (link) {
 
                                 link.classList.remove(
                                     "active"
@@ -1018,7 +1091,7 @@ function startNavigation() {
 
 
     sections.forEach(
-        section => {
+        function (section) {
 
             sectionObserver.observe(
                 section
@@ -1042,6 +1115,11 @@ function startProjectInteractions() {
         );
 
 
+    if (!cards.length) {
+        return;
+    }
+
+
     const reducedMotion =
         window.matchMedia(
             "(prefers-reduced-motion: reduce)"
@@ -1063,11 +1141,11 @@ function startProjectInteractions() {
 
 
     cards.forEach(
-        card => {
+        function (card) {
 
             card.addEventListener(
                 "mousemove",
-                event => {
+                function (event) {
 
                     const rect =
                         card.getBoundingClientRect();
@@ -1115,10 +1193,9 @@ function startProjectInteractions() {
 
             card.addEventListener(
                 "mouseleave",
-                () => {
+                function () {
 
-                    card.style.transform =
-                        "";
+                    card.style.transform = "";
 
                 }
             );
@@ -1135,11 +1212,37 @@ function startProjectInteractions() {
 
 window.addEventListener(
     "load",
-    () => {
+    function () {
+
+        /*
+           Always reveal the page.
+        */
 
         document.body.classList.add(
             "loaded"
         );
 
     }
+);
+
+
+/* =========================================================
+   EMERGENCY VISIBILITY FALLBACK
+========================================================= */
+
+setTimeout(
+    function () {
+
+        if (
+            document.body
+        ) {
+
+            document.body.classList.add(
+                "loaded"
+            );
+
+        }
+
+    },
+    1500
 );
